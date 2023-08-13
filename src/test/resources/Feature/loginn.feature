@@ -1,6 +1,6 @@
 Feature: Login functionality
 
-@tag1
+@validlogin
 Scenario Outline: validate login functionality using valid credential
  
 Given  user on login page
@@ -11,9 +11,9 @@ Then   login successfully
  Examples:
  |username                        |    password   |   
  | "sachin@varahitechnologies.com"| 	"1234566@"	|
+  
  
- 
-@tag2
+@invalidlogin
 Scenario Outline: validate login functionality using invalid username
  
 Given  user on login page

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Before;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
@@ -14,9 +15,10 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class Hook {
 	
 	 
-	private static AppiumDriver  driver;
+	//private static AppiumDriver<MobileElement> driver;
+	private static WebDriver driver;
 	
-	@Before
+	@Before 
 	public void setup() {
 		try {
 			// Set the Appium server URL
@@ -32,16 +34,16 @@ public class Hook {
 			desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
 			driver = new AndroidDriver<MobileElement>(appiumServerUrl, desiredCapabilities);
-
+			driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 			System.out.println("Application is starting............. ");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+		
 	}
 	
 	
-	public  static AppiumDriver getDriver() {
+	public  static WebDriver getDriver() {
 		
 		 return driver;
 	}

@@ -10,9 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.AssertJUnit;
 import org.testng.asserts.Assertion;
-
-import com.factory.app;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
@@ -24,8 +21,7 @@ import utility.Hook;
 
 public class login_pharma {
 
-	 
-	 private static AppiumDriver driver;
+	private static  AppiumDriver<MobileElement> driver;
 	 
 	private By email = By.xpath("//android.widget.EditText[@resource-id='username']");
 	private By pass = By.xpath("//android.widget.EditText[@resource-id='pass']");
@@ -39,15 +35,21 @@ public class login_pharma {
 	private By googleaccount = By.id("com.google.android.gms:id/container");
 	private By homepage = By.xpath("//android.view.View[@text='Marketplace']");
 	private By remeber_button = By.xpath("//android.widget.CheckBox[@resource-id='remember_me']");
+	
+	 
 
 	public static void main(String[] args) throws MalformedURLException {
 		login_pharma login = new login_pharma( );
-		//login.launch();
+		login.launch();
 
+	}
+	public static  AppiumDriver<MobileElement> getDriver() {
+		
+		return driver;
 	}
 	 
 	 
-	public static   void launch()  {
+	public static   AppiumDriver<MobileElement> launch()  {
 
 		try {
 			// Set the Appium server URL
@@ -57,21 +59,24 @@ public class login_pharma {
 			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 			desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "4d59fb4e");
-			desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Pappya\\Downloads\\app-debug.apk");
+			desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Pappya\\Downloads\\app-debug (2).apk");
+			 
 			desiredCapabilities.setCapability("appPackage", "io.cordova.pharmaClick");
 			desiredCapabilities.setCapability("appActivity", "io.cordova.pharmaClick.MainActivity");
 			desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
 			driver = new AndroidDriver<MobileElement>(appiumServerUrl, desiredCapabilities);
-			 
+			
 			System.out.println("Application is starting............. ");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
+		return driver;
 		
 	}
-
+	 
 	public void user_provide_and(String username, String password) {
 		driver.findElement(email).sendKeys(username);
 		driver.findElement(pass).sendKeys(password);

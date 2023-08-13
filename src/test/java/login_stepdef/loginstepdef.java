@@ -2,16 +2,21 @@ package login_stepdef;
 
 import java.net.MalformedURLException;
 
+import org.openqa.selenium.WebDriver;
+
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.login_pharma;
+import utility.Hook;
  
-
+  
 public class loginstepdef {
-
-	   AppiumDriver driver;
+	
+	public  AppiumDriver<MobileElement> driver;
+	   //AppiumDriver<MobileElement> driver;
 	
 	login_pharma login = new login_pharma();
 	
@@ -19,9 +24,9 @@ public class loginstepdef {
 	
 	@Given("user on login page")
 	public void user_on_login_page()   {
-		 
-		login.launch();
- 
+		
+	driver=	login.launch();
+		System.out.println(driver +" driver print ");
 	}
 
 	@When("user provide {string} and {string}")
