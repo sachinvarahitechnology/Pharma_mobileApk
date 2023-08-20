@@ -31,8 +31,9 @@ public class homepage_pharma  {
 	private By blogtext = By.xpath("//android.widget.TextView[@text='BLOGS']");
 	private By jobs = By.xpath("//android.view.View[@index='4']");
 	private By jobtext = By.xpath("//android.widget.TextView[@text='JOBS']");
+	//private By menu = By.id("com.android.systemui:id/miui_keyguard_vertical_clock");
+	//private By menu = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.widget.TextView");
 	private By menu = By.xpath("//android.widget.TextView[@index='1']");
-	 
 	private By menutext = By.xpath("//android.widget.TextView[@text='My Account']");
 	
 	
@@ -78,12 +79,14 @@ public class homepage_pharma  {
 	}
 	
 	public void click_on_menu() {
-				
+		 
 		 List<MobileElement >ss = driver.findElements(menu);
 		 System.out.println(ss.size());
 		 for(int i=0; i<ss.size(); i++) {
 			 System.out.println("elemt of ss :"+ ss.get(i).getText());
-			 ss.get(0).click();		  
+			 
+			  ss.get(0).click();	
+			   
 		 }
 		 
 	}

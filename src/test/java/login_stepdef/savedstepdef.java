@@ -52,7 +52,7 @@ public class savedstepdef {
 
 	@Then("verify save blog list")
 	public void verify_save_blog_list() {
-	save.verify_save_blog_list();
+		save.verify_save_blog_list();
 	}
 
 	@When("click on saved_Blogs")
@@ -64,16 +64,35 @@ public class savedstepdef {
 	public void click_on_saved_jobs() {
 		save.click_on_saved_jobs();
 	}
-	
+
 	@Then("verify save Job list")
 	public void verify_save_job_list() {
-	     save.verify_save_job_list();
+		save.verify_save_job_list();
 	}
 
+	@Then("verify unsave functionality")
+	public void verify_unsave_functionality() {
+		save.verify_unsave_functionality();
+	}
+
+	@When("click on save news")
+	public void click_on_save_news() {
+		 save.click_on_save_news();
+	}
 
 	@Then("verify save companies")
 	public void verify_save_companies() {
 		save.verify_save_companies();
+	}
+
+	@When("click on save company")
+	public void click_on_save_company() {
+		save.click_on_save_company();
+	}
+
+	@Then("verify share icon functionality")
+	public void verify_share_icon_functionality() {
+		save.verify_share_icon_functionality();
 	}
 
 	@Then("verify save  news list")

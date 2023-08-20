@@ -47,10 +47,11 @@ public class newsstepdef {
 	public void click_search_icon() {
 		news.click_search_icon();
 	}
+ 
 
 	@Then("validate search  functioanlity by category name")
 	public void validate_search_functioanlity_by_category_name() {
-		 news.validate_search_functioanlity_by_category_name();
+		news.validate_search_functioanlity_by_category_name();
 	}
 
 	@Then("validate search  functioanlity")

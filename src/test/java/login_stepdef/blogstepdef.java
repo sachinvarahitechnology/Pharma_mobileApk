@@ -40,9 +40,15 @@ public class blogstepdef {
 		blog.varify_click_blog_is_open();
 	}
 
+	@Then("validate saved icon")
+	public void validate_saved_icon() throws InterruptedException {
+		Thread.sleep(2000);
+		 blog.validate_saved_icon();
+	}
+
 	@Then("validate reads of author")
 	public void validate_reads_of_author() {
-		 blog.validate_reads_of_author();
+		blog.validate_reads_of_author();
 	}
 
 	@When("click on author name")
@@ -50,9 +56,19 @@ public class blogstepdef {
 		blog.click_on_author_name();
 	}
 
+	@Then("verify comment is posted or not")
+	public void verify_comment_is_posted_or_not() throws InterruptedException {
+		blog.verify_comment_is_posted_or_not();
+	}
+
 	@Then("velidate about blogger")
 	public void velidate_about_blogger() {
 		blog.velidate_about_blogger();
+	}
+
+	@Then("verify follow button")
+	public void verify_follow_button() {
+		blog.verify_follow_button();
 	}
 
 	@When("click on write blog")

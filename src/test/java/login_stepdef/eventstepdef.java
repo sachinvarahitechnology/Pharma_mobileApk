@@ -33,6 +33,11 @@ public class eventstepdef {
 		event.click_on_any_event();
 	}
 
+	@Then("validate save_external functionality")
+	public void validate_save_external_functionality() {
+		 event.validate_save_external_functionality();
+	}
+
 	@Then("verify event is display with date")
 	public void verify_event_is_display_with_date() {
 		event.verify_event_is_display_with_date();
@@ -60,12 +65,12 @@ public class eventstepdef {
 
 	@When("use search functionality")
 	public void use_search_functionality() {
-		 event.use_search_functionality();
+		event.use_search_functionality();
 	}
 
 	@Then("validate as per search functionality")
 	public void validate_as_per_search_functionality() {
-		 event.validate_as_per_search_functionality();
+		event.validate_as_per_search_functionality();
 	}
 
 }

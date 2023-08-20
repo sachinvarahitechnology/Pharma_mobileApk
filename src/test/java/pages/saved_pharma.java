@@ -23,6 +23,10 @@ public class saved_pharma {
 	private By event = By.xpath("//android.widget.TextView[@text='Events']");
 	private By blog = By.xpath("//android.widget.TextView[@text='Blogs']");
 	private By jobs = By.xpath("//android.widget.TextView[@text='Jobs']");
+	private By saved_company_location_icon = By.xpath("//android.widget.TextView[@index='4']");
+	private By share_icon = By.xpath("//android.widget.Image[@text='Share']");
+	private By save_icon = By.xpath("//android.widget.TextView[@index='3']");
+	private By saved_newsbyway = By.xpath("//android.widget.Image[@text='news']");
 
 	private By saved_company = By.xpath("//android.view.View[@index='0']");
 	private By saved_news = By.xpath("//android.view.View[@index='1']");
@@ -36,8 +40,9 @@ public class saved_pharma {
 	public void click_on_saved_news() {
 		driver.findElement(news).click();
 	}
+
 	public void verify_save_news_list() {
-		 
+
 		List<MobileElement> ss = driver.findElements(saved_news);
 
 		for (int i = 0; i < ss.size(); i++) {
@@ -45,33 +50,52 @@ public class saved_pharma {
 		}
 	}
 
+	public void click_on_save_company() {
+		driver.findElement(saved_company_location_icon).click();
+
+	}
+	
+	public void click_on_save_news() {
+	List<MobileElement> ss= driver.findElements(saved_newsbyway);
+	System.out.println(ss.size());
+	ss.get(0).click();
+	
+	}
+
+	public void verify_unsave_functionality() {
+		List<MobileElement> ss = driver.findElements(save_icon);
+		System.out.println(ss.size());
+		ss.get(0).click();
+	}
+
 	public void click_on_saved_events() {
 		driver.findElement(event).click();
 	}
-	
-	
+
+	public void verify_share_icon_functionality() {
+		driver.findElement(share_icon).click();
+	}
+
 	public void verify_save_blog_list() {
-		 List<MobileElement> ss= driver.findElements(saved_blog);
-		 
-		 for(int i=0; i<ss.size(); i++) {
-			 System.out.println("blog list :"+ss.get(i).getText());
-		 }
+		List<MobileElement> ss = driver.findElements(saved_blog);
+
+		for (int i = 0; i < ss.size(); i++) {
+			System.out.println("blog list :" + ss.get(i).getText());
+		}
 	}
-	
-	
+
 	public void verify_save_job_list() {
-	     
+
 	}
-	
-	
+
 	public void click_on_saved_blogs() {
 		driver.findElement(blog).click();
 	}
-	
+
 	public void verify_save_event_list() {
-		 
-		 String ss= driver.findElement(saved_event).getText();
-		 System.out.println("saved event name :"+ss);
+
+		String ss = driver.findElement(saved_event).getText();
+		System.out.println("saved event name :" + ss);
 	}
 
 	public void click_on_saved_jobs() {
@@ -85,7 +109,5 @@ public class saved_pharma {
 			System.out.println(ss.get(i).getText());
 		}
 	}
-
-	
 
 }

@@ -31,12 +31,18 @@ public class marketplacestepdef {
 
 	@When("click on any company")
 	public void click_on_any_company() throws InterruptedException {
+		Thread.sleep(3000);
 		marketplace.click_on_any_company();
 	}
 
 	@Then("validate mail functionality")
 	public void validate_mail_functionality() {
 		marketplace.validate_mail_functionality();
+	}
+	
+	@Then("verify rate functionality")
+	public void verify_rate_functionality() {
+	 marketplace.verify_rate_functionality();    
 	}
 
 	@When("click on search")
@@ -50,7 +56,8 @@ public class marketplacestepdef {
 	}
 
 	@When("click on any category")
-	public void click_on_any_category() {
+	public void click_on_any_category() throws InterruptedException {
+		Thread.sleep(5000);
 		marketplace.click_on_any_category();
 	}
 

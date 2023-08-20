@@ -29,7 +29,8 @@ public class event_pharma {
 	private By search_box = By.xpath("//android.widget.EditText[@index='1']");
 	private By search_confirm = By.xpath("//android.widget.Button[@text='Confirm']");
 	private By after_search = By.xpath("//android.widget.TextView[@index='0']");
-	
+	private By external_save = By.xpath("//android.widget.TextView[@index='0']");
+		
 
 	private By Aug_23_Medlab = By.xpath("//android.widget.TextView[@text='Medlab Asia / Asia Health']");
 	private By Aug_23_indian = By.xpath("//android.widget.TextView[@text='INDIAN PHARMA EXPO NEW DELHI']");
@@ -75,6 +76,19 @@ public class event_pharma {
 		Thread.sleep(3000);
 		driver.navigate().back();
 
+	}
+	
+	public void validate_save_external_functionality() {
+		
+		List<MobileElement>	 ss= 	driver.findElements(external_save);
+	     
+	     System.out.println("size of element "+ss.size());
+	     
+	     for(int i=0; i<ss.size(); i++) {
+	    	 System.out.println( ss.get(i).getText());
+	    	 ss.get(4).click();
+	    	 break;
+	     }
 	}
 	
 	public void use_search_functionality() {

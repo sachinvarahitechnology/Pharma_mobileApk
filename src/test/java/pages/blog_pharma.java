@@ -3,9 +3,12 @@ package pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import login_stepdef.homepagestepdef;
@@ -34,19 +37,24 @@ public class blog_pharma {
 	private By authorname = By.xpath("//android.widget.TextView[@text='admin@mystore.com']");
 	private By about_blogger = By.xpath("//android.widget.TextView[@text='About Blogger']");
 	private By reads = By.xpath("//android.widget.TextView[@text='Reads']");
-	
+	private By follow_button = By.xpath("//android.view.View[@index='7']");
+	private By comment_box = By.xpath("//android.widget.EditText[@index='0']");
+	private By post = By.xpath("//android.widget.Button[@text='Post']");
+	private By external_save = By.xpath("//android.widget.TextView[@index='0']");
 
 	public void click_on_any_blog() {
 
 		List<MobileElement> blogs = driver.findElements(firstblog);
 		// System.out.println("size of total blog :"+ blogs.size());
 
-		for (int i = 1; i < blogs.size(); i++) {
+		for (int i = 0; i < blogs.size(); i++) {
 			System.out.println("Before clicking on blog author name :" + blogs.get(2).getText());
 			blogs.get(2).click();
 			break;
 		}
 	}
+	
+
 
 	public void varify_click_blog_is_open() {
 		System.out.println("open blog name :" + driver.findElement(openblog).getText());
@@ -58,6 +66,59 @@ public class blog_pharma {
 		driver.findElement(search_submit_button).click();
 
 	}
+	public void validate_saved_icon() {
+     List<MobileElement>	 ss= 	driver.findElements(external_save);
+     
+     System.out.println("size of element "+ss.size());
+     
+     for(int i=0; i<ss.size(); i++) {
+    	 System.out.println( ss.get(i).getText());
+    	 ss.get(6).click();
+    	 break;
+     }
+	}
+
+	public void verify_follow_button() {
+		   driver.findElement(follow_button).click();
+	}
+	
+	public void verify_comment_is_posted_or_not() throws InterruptedException {
+		 
+		
+		Dimension size = driver.manage().window().getSize();
+		int screenWidth = size.getWidth();
+		int screenHeight = size.getHeight();
+
+		int startX = screenWidth / 2;
+		int startY = (int) (screenHeight * 0.9); // increase go deeper
+		int endY = (int) (screenHeight * 0.1);
+
+		TouchAction touchAction = new TouchAction(driver);
+
+		touchAction.press(PointOption.point(startX, startY)).waitAction().moveTo(PointOption.point(startX, endY))
+				.release().perform();
+
+		Thread.sleep(2000);
+		int startX1 = screenWidth / 2;
+		int startY1 = (int) (screenHeight * 0.9); // increase go deeper
+		int endY1 = (int) (screenHeight * 0.1);
+
+		touchAction.press(PointOption.point(startX1, startY1)).waitAction().moveTo(PointOption.point(startX1, endY1))
+				.release().perform();
+		
+		int startXx = screenWidth / 2;
+		int startYy = (int) (screenHeight * 0.4); // increase go deeper
+		int endYy = (int) (screenHeight * 0.6);
+
+		TouchAction touchAction2 = new TouchAction(driver);
+
+		touchAction.press(PointOption.point(startX, startY)).waitAction().moveTo(PointOption.point(startX, endY))
+				.release().perform();
+		
+		driver.findElement(comment_box).sendKeys("good");
+		driver.findElement(post).click();
+	}
+	
 	public void validate_reads_of_author() {
 		 driver.findElement(reads).click();
 	}

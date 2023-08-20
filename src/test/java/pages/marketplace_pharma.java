@@ -46,6 +46,8 @@ public class marketplace_pharma {
 	private By search_bylocation = By.xpath("//android.widget.EditText[@index='5']");
 	private By conform_button = By.xpath("//android.widget.Button[@text='Confirm']");
 	private By save_icon = By.xpath("//android.widget.TextView[@index='3']");
+	private By rateUS_icon = By.xpath("//android.widget.TextView[@index='1']");
+	private By submit_button = By.xpath("//android.widget.Button[@text='Submit']");
 
 	public void user_on_marketplace_page() {
 		homepage.user_on_login_page_login();
@@ -117,6 +119,11 @@ public class marketplace_pharma {
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		String product = driver.findElement(By.xpath("//android.widget.TextView[@text='PRODUCTS']")).getText();
 		AssertJUnit.assertEquals(product, "PRODUCTS");
+	}
+	
+	public void verify_rate_functionality() {
+		driver.findElement(rateUS_icon).click();
+		driver.findElement(submit_button).click();	
 	}
 
 	public void click_on_any_feature_company() throws InterruptedException {

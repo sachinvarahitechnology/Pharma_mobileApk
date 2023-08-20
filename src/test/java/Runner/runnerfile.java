@@ -8,12 +8,12 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features = {"./src/test/resources/Feature/myaccount.feature"},
+		features = {"./src/test/resources/Feature/event.feature"},
 		
 		glue={"login_stepdef"},
 		monochrome = true,
-		dryRun = true, 
-		tags ="@tag3", 
+		//dryRun = true, 
+		tags ="@title_date", 
 		plugin = {
 						"pretty",
 						"html: test-report"

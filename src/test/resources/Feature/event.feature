@@ -30,7 +30,10 @@ Scenario: verification of internal save functionality
 When click on any event 
 Then validate save functionality 
 
+@save_external
+Scenario: verification of external save functionality
 
+Then validate save_external functionality
 
 @search
 Scenario: verification of search functionality

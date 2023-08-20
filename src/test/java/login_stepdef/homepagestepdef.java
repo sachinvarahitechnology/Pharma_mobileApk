@@ -73,8 +73,7 @@ public class homepagestepdef {
 	}
 
 	@When("click on menu")
-	public void click_on_menu() {
-		 
+	public void click_on_menu()  {
 		 homepage.click_on_menu();
 	}
 

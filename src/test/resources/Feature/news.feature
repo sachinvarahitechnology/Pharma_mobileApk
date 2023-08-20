@@ -16,6 +16,7 @@ Scenario: verify save functionality in news
 When click on any news
 Then validate save functioanlity
 
+ 
 @search  
 Scenario: verify search functionality by title in news
 

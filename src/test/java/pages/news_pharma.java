@@ -37,8 +37,8 @@ public class news_pharma {
 	
 	private By policycategory = By.xpath("//android.widget.TextView[@text='POLICY / REGULATIONS']");
 	private By clickablenews = By.xpath(
-			"//android.widget.TextView[@text='WHO issues alert about India made contaminated cough syrup found in Iraq']");
-	private By news = By.xpath("//android.widget.TextView[@text='WHO issues alert about India made contaminated cough syrup found in Iraq']");
+			"//android.widget.TextView[@text='Industry backlash may reshape EU compulsory pharma licensing reform, says GlobalData']");
+	private By news = By.xpath("//android.widget.TextView[@text='Industry backlash may reshape EU compulsory pharma licensing reform, says GlobalData']");
 	
 	private By time = By.xpath("android.widget.TextView[@text='7 Hours ago ']");
 
@@ -51,12 +51,15 @@ public class news_pharma {
 		MobileElement ss= driver.findElement(news);
 	 
 		String newstitle = ss.getText();
-		ss.click();		
+		ss.click();	
+		Thread.sleep(4000);
 	}
 
 	public void visible_with_time() {
 		System.out.println("new visible that time :" + driver.findElement(time).getText());
 	}
+	
+	 
 
 	public void todaynews_is_scroll() {
 
