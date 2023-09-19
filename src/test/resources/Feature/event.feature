@@ -16,19 +16,12 @@ Scenario: verification of internal share functionality
 When click on any event 
 Then validate share functionality
 
-
-
-@tag1   
-Scenario: verification of Allevent is clickable 
-   
-Then verify all event is clickable
-
-
 @save
 Scenario: verification of internal save functionality
 
 When click on any event 
 Then validate save functionality 
+
 
 @save_external
 Scenario: verification of external save functionality
@@ -41,9 +34,16 @@ Scenario: verification of search functionality
 When use search functionality  
 Then validate as per search functionality
  
- 
- @tag2 
+@date_time 
 Scenario: verification of event visible with date & event name
  
 Then verify event is display with date
+ 
+ 
+@tag1 #need to check sometime not working   
+Scenario: verification of Allevent is clickable 
+   
+Then verify all event is clickable
+
+ 
  

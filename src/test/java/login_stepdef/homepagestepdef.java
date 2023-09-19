@@ -41,6 +41,15 @@ public class homepagestepdef {
 	public void click_on_event() {
 		homepage.click_on_event();
 	}
+	@When("click on All")
+	public void click_on_all() {
+	    homepage.click_on_all();
+	}
+	@Then("verify All feature is open")
+	public void verify_all_feature_is_open() {
+	     homepage.verify_all_feature_is_open();
+	}
+
 
 	@When("click on news")
 	public void click_on_news() {

@@ -29,14 +29,46 @@ public class jobstepdef {
 
 	}
 
+	@When("click on share icon")
+	public void click_on_share_icon() {
+		job.click_on_share_icon();
+	}
+
 	@When("click on any filter and put")
 	public void click_on_any_filter_and_put() {
-		 job.click_on_any_filter_and_put();
+		job.click_on_any_filter_and_put();
+	}
+
+	@When("click on save icon")
+	public void click_on_save_icon() {
+		job.click_on_save_icon();
 	}
 
 	@Then("varify result as per filter")
 	public void varify_result_as_per_filter() {
-		 job.varify_result_as_per_filter();
+		job.varify_result_as_per_filter();
+	}
+	
+	@Then("verify rating functionality")
+	public void verify_rating_functionality() {
+	  job.verify_rating_functionality();
+	}
+	
+	@Then("verify review functionality")
+	public void verify_review_functionality() {
+	    job.verify_review_functionality();
+	}
+
+
+
+	@When("click on any job")
+	public void click_on_any_job() {
+		 job.click_on_any_job();
+	}
+
+	@Then("click on internal save icon")
+	public void click_on_internal_save_icon() {
+		 job.click_on_internal_save_icon();
 	}
 
 }

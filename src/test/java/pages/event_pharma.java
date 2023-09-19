@@ -21,7 +21,7 @@ public class event_pharma {
 	}
 
 	private By month_23 = By.xpath("//android.view.View[@index='0']");
-	private By clickable_event = By.xpath("//android.widget.TextView[@text='INDIAN PHARMA EXPO NEW DELHI']");
+	private By clickable_event = By.xpath("//android.widget.TextView[@index='5']");
 	private By date_time = By.xpath("//android.widget.TextView[@index='0']");
 	private By save_internal = By.xpath("//android.widget.TextView[@index='3']");
 	private By share_internal = By.xpath("//android.widget.Image[@text='Share']");
@@ -30,12 +30,12 @@ public class event_pharma {
 	private By search_confirm = By.xpath("//android.widget.Button[@text='Confirm']");
 	private By after_search = By.xpath("//android.widget.TextView[@index='0']");
 	private By external_save = By.xpath("//android.widget.TextView[@index='0']");
-		
+	private By events = By.xpath("//android.widget.TextView[@index='0']");
 
-	private By Aug_23_Medlab = By.xpath("//android.widget.TextView[@text='Medlab Asia / Asia Health']");
-	private By Aug_23_indian = By.xpath("//android.widget.TextView[@text='INDIAN PHARMA EXPO NEW DELHI']");
-	private By Aug_23_INA = By.xpath("//android.widget.TextView[@text='INAPHARM']");
-	private By Aug_23_InaLab = By.xpath("//android.widget.TextView[@text='InaLab']");
+	private By Sep_23_first = By.xpath("//android.widget.TextView[@text='analytica Anacon India & India Lab Expo']");
+	private By Sep_23_Second = By.xpath("//android.widget.TextView[@text='PHARMACONEX']");
+	private By Sep_23_third = By.xpath("//android.widget.TextView[@text='INNOPACK PHARMA CONFEX - SOUTH']");
+	 
 
 	public void click_on_any_event() {
 		List<MobileElement> ss = driver.findElements(month_23);
@@ -55,26 +55,24 @@ public class event_pharma {
 		for (int i = 0; i < list.size(); i++) {
 			list = list.subList(0, 15);
 			System.out.println(list.get(i).getText());
+			
 		}
 	}
 
 	public void verify_all_event_is_clickable() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(Aug_23_Medlab).click();
+	      	
+		driver.findElement(Sep_23_first).click();
 		Thread.sleep(3000);
 		driver.navigate().back();
 
-		driver.findElement(Aug_23_indian).click();
+		driver.findElement(Sep_23_Second).click();
 		Thread.sleep(3000);
 		driver.navigate().back();
 
-		driver.findElement(Aug_23_INA).click();
+		driver.findElement(Sep_23_third).click();
 		Thread.sleep(3000);
-		driver.navigate().back();
-
-		driver.findElement(Aug_23_InaLab).click();
-		Thread.sleep(3000);
-		driver.navigate().back();
+		driver.navigate().back();		 
 
 	}
 	
@@ -121,6 +119,11 @@ public class event_pharma {
 	}
 
 	public void validate_click_event_is_open_or_not() {
-		System.out.println("clickable event :" + driver.findElement(clickable_event).getText());
+		   List<MobileElement>ss= driver.findElements(clickable_event) ;
+		   System.out.println("size of this element ;"+ss.size());
+		   
+		   for(int i=0; i<ss.size(); i++) {
+			   System.out.println("element :"+ss.get(i).getText());
+		   }
 	}
 }

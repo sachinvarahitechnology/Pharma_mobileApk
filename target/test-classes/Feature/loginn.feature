@@ -10,7 +10,7 @@ Then   login successfully
 
  Examples:
  |username                        |    password   |   
- | "sachin@varahitechnologies.com"| 	"1234566@"	|
+ |"sachin@varahitechnologies.com"| 	"1234566@"	|
   
  
 @invalidlogin

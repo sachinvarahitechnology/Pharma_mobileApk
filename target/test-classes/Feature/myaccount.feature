@@ -23,3 +23,10 @@ Scenario: verify company name in my account
 Given user on myaccount page
 When enter company name
 Then verify  company name
+
+@tag4
+Scenario: verify Education in my account
+
+Given user on myaccount page
+When enter education
+Then verify  education

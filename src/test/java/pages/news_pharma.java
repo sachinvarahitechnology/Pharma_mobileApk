@@ -37,10 +37,10 @@ public class news_pharma {
 	
 	private By policycategory = By.xpath("//android.widget.TextView[@text='POLICY / REGULATIONS']");
 	private By clickablenews = By.xpath(
-			"//android.widget.TextView[@text='Industry backlash may reshape EU compulsory pharma licensing reform, says GlobalData']");
-	private By news = By.xpath("//android.widget.TextView[@text='Industry backlash may reshape EU compulsory pharma licensing reform, says GlobalData']");
+			"//android.widget.TextView[@text='WHO launches online repository of evidence-informed decision-making tools']");
+	private By news = By.xpath("//android.widget.TextView[@text='WHO launches online repository of evidence-informed decision-making tools']");
 	
-	private By time = By.xpath("android.widget.TextView[@text='7 Hours ago ']");
+	private By time = By.xpath("//android.widget.TextView[@text='Pharmaclick Bureau, Mumbai 3 Days ago ']");
 
 	
 	public void click_on_any_news() throws InterruptedException {
@@ -56,7 +56,7 @@ public class news_pharma {
 	}
 
 	public void visible_with_time() {
-		System.out.println("new visible that time :" + driver.findElement(time).getText());
+	 System.out.println("new visible that time :" + driver.findElement(time).getText());
 	}
 	
 	 

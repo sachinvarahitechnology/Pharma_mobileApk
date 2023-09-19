@@ -38,7 +38,7 @@ Scenario: validate exteranal save any blog or not
 Then validate saved icon
 
 @save_blog
-Scenario: validate internalsave any blog or not
+Scenario: validate internal save any blog or not
 
 When click on any blog
 Then verify save functionality
@@ -72,7 +72,6 @@ When find by search function
 Then Validate as per search
 
 
- 
 
 @share_blog
 Scenario: validate internal share any blog or not
