@@ -1,6 +1,6 @@
 Feature: Marketplace functionality
 
-Background: Given user on marketplace page 
+#Background: Given user on marketplace page 
 
 
 @product_alphabet
@@ -70,9 +70,11 @@ Then validate search functionality by product name
 @save
 Scenario: verification of save functionality in marketplace  
 
+Given user on marketplace page 
 When click on any category 
 When click on any company
 When validate save functionlity
+Then check this save company is come in saved_company list or not
  
  
 @tag10 #check once

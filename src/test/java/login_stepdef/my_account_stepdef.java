@@ -47,12 +47,22 @@ public class my_account_stepdef {
 
 	@When("enter company name")
 	public void enter_company_name() throws InterruptedException {
-		 myaccount.enter_company_name();
+		myaccount.enter_company_name();
+	}
+
+	@When("enter education")
+	public void enter_education() throws InterruptedException {
+		 myaccount.enter_education();
+	}
+
+	@Then("verify  education")
+	public void verify_education() {
+		 myaccount.verify_education();
 	}
 
 	@Then("verify  company name")
 	public void verify_company_name() {
-		 myaccount.verify_company_name();
+		myaccount.verify_company_name();
 	}
 
 	@Then("verify position")

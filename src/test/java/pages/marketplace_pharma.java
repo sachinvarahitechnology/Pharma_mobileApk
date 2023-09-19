@@ -24,10 +24,13 @@ public class marketplace_pharma {
 
 	private static AppiumDriver<MobileElement> driver;
 	homepagestepdef homepage = new homepagestepdef();
+	 
+	saved_pharma save;
 
 	public marketplace_pharma(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 		System.out.println("driver value in marketplace pharma :-- " + driver);
+		save=new saved_pharma(driver);
 	}
 
 	private By excipientscategory = By.xpath("//android.widget.EditText[@text='Excipients']");
@@ -48,6 +51,7 @@ public class marketplace_pharma {
 	private By save_icon = By.xpath("//android.widget.TextView[@index='3']");
 	private By rateUS_icon = By.xpath("//android.widget.TextView[@index='1']");
 	private By submit_button = By.xpath("//android.widget.Button[@text='Submit']");
+	private By home_footer = By.xpath("//android.widget.TextView[@text='Home']");
 
 	public void user_on_marketplace_page() {
 		homepage.user_on_login_page_login();
@@ -94,6 +98,16 @@ public class marketplace_pharma {
 		driver.findElement(search_bylocation).sendKeys("mumbai");
 		driver.findElement(conform_button).click();
 	}
+	
+	public void check_this_save_company_is_come_in_saved_company_list_or_not() throws InterruptedException {
+	     driver.navigate().back();
+	     driver.findElement(home_footer).click();
+	     homepage.click_on_menu();
+	     save.user_on_save_itempage();
+	     save.click_on_companies();
+	     save.verify_save_companies();
+	     
+	}
 
 	public void click_on_any_category() {
 		driver.findElement(excipientscategory).click();
@@ -109,7 +123,7 @@ public class marketplace_pharma {
 		System.out.println("no of companies present : " + ss.size());
 		for (int i = 0; i < ss.size(); i++) {
 
-			ss.get(1).click();
+			ss.get(2).click();
 		}
 	}
 

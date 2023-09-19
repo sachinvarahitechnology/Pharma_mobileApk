@@ -20,16 +20,20 @@ public class savedstepdef {
 	homepagestepdef home = new homepagestepdef();
 
 	@Given("user on save itempage")
-	public void user_on_save_itempage() {
+	public void user_on_save_itempage() throws InterruptedException {
 		driver = login.launch();
 		System.out.println("driver value in savedstepdef: " + driver);
 		save = new saved_pharma(driver);
 		home.user_on_login_page_login();
 		home.click_on_menu();
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Saved Items']")).click();
+		save.user_on_save_itempage();
 	}
-
+	@When("click on save company")
+	public void click_on_save_company() throws InterruptedException {
+		save.click_on_save_company();
+	}
+	
 	@When("click on companies")
 	public void click_on_companies() {
 		save.click_on_companies();
@@ -46,7 +50,7 @@ public class savedstepdef {
 	}
 
 	@Then("verify save event list")
-	public void verify_save_event_list() {
+	public void verify_save_event_list() throws InterruptedException {
 		save.verify_save_event_list();
 	}
 
@@ -76,22 +80,20 @@ public class savedstepdef {
 	}
 
 	@When("click on save news")
-	public void click_on_save_news() {
+	public void click_on_save_news() throws InterruptedException {
 		 save.click_on_save_news();
 	}
 
 	@Then("verify save companies")
-	public void verify_save_companies() {
+	public void verify_save_companies() throws InterruptedException {
 		save.verify_save_companies();
 	}
 
-	@When("click on save company")
-	public void click_on_save_company() {
-		save.click_on_save_company();
-	}
+	
 
 	@Then("verify share icon functionality")
-	public void verify_share_icon_functionality() {
+	public void verify_share_icon_functionality() throws InterruptedException {
+		Thread.sleep(3000);
 		save.verify_share_icon_functionality();
 	}
 

@@ -24,8 +24,7 @@ When click search icon
 Then validate search  functioanlity
 
 @newsdatetime 
-Scenario:
-  verification of news seen with time
+Scenario:  verification of news seen location with time
     
 When click on any news
 Then visible with time

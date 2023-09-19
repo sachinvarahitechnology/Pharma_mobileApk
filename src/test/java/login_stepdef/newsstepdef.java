@@ -34,7 +34,8 @@ public class newsstepdef {
 	}
 
 	@Then("visible with time")
-	public void visible_with_time() {
+	public void visible_with_time() throws InterruptedException {
+		Thread.sleep(3000);
 		news.visible_with_time();
 	}
 

@@ -11,6 +11,8 @@ Then verify save companies
 @tag10  
 Scenario: verify share function after saved any company
 
+Given user on save itempage
+When click on companies
 When click on save company 
 Then verify share icon functionality
 
@@ -18,12 +20,14 @@ Then verify share icon functionality
 @tag11 
 Scenario: verify unsave function after saved any company
 
+Given user on save itempage
+When click on companies
 When click on save company 
 Then verify unsave functionality
 
 
 @tag2  
-Scenario: verify save items page
+Scenario: verify save news page
 
 Given user on save itempage
 When click on  saved_news
@@ -33,18 +37,22 @@ Then verify save  news list
 @unsave_news
 Scenario: verify unsave function after saved any news
 
+Given user on save itempage
+When click on  saved_news
 When click on save news 
 Then verify unsave functionality 
 
-@unshare_news
-Scenario: verify unsave function after saved any news
+@share_news
+Scenario: verify share function after saved any news
 
+Given user on save itempage
+When click on  saved_news
 When click on save news  
 Then verify share icon functionality
  
  
 @tag3  
-Scenario: verify save items page
+Scenario: verify save_event items page
 
 Given user on save itempage
 When click on Saved_Events

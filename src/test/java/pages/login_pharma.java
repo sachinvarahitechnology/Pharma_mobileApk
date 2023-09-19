@@ -59,8 +59,8 @@ public class login_pharma {
 			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 			desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 			desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "4d59fb4e");
-			desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Pappya\\Downloads\\app-debug (2).apk");
-			 
+			desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Apk_testing\\yash_special\\app-debug.apk");
+			
 			desiredCapabilities.setCapability("appPackage", "io.cordova.pharmaClick");
 			desiredCapabilities.setCapability("appActivity", "io.cordova.pharmaClick.MainActivity");
 			desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");

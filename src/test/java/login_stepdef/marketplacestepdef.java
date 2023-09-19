@@ -5,15 +5,17 @@ import io.appium.java_client.MobileElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.hambergermenu_pharma;
 import pages.login_pharma;
 import pages.marketplace_pharma;
+import pages.saved_pharma;
 
 public class marketplacestepdef {
 
 	private static AppiumDriver<MobileElement> driver;
 
 	login_pharma login = new login_pharma();
-
+	 
 	marketplace_pharma marketplace;
 
 	@Given("user on marketplace page")
@@ -86,7 +88,10 @@ public class marketplacestepdef {
 	public void click_on_any_feature_company() throws InterruptedException {
 		marketplace.click_on_any_feature_company();
 	}
-
+	@Then("check this save company is come in saved_company list or not")
+	public void check_this_save_company_is_come_in_saved_company_list_or_not() throws InterruptedException {
+	     marketplace.check_this_save_company_is_come_in_saved_company_list_or_not();
+	}
 	@Then("validate did the one clicked open")
 	public void validate_did_the_one_clicked_open() {
 		marketplace.validate_did_the_one_clicked_open();

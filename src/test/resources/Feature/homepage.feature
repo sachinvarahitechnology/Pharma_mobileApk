@@ -40,13 +40,22 @@ When  user on homepage
 When  click on jobs
 Then  verify job feature is open
 
+
+@tag7
+Scenario: validate All module is clickable 
+   
+Given user on login page & login
+When  user on homepage
+When  click on All 
+Then  verify All feature is open
+
 @tag6
 Scenario: validate manubar is clickable 
    
 Given user on login page & login
 When  user on homepage
 When  click on menu
-#Then  verify menu feature is open
+Then  verify menu feature is open
 
 
 
