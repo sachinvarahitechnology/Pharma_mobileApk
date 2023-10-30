@@ -44,7 +44,6 @@ public class login_pharma {
 
 	}
 	public static  AppiumDriver<MobileElement> getDriver() {
-		
 		return driver;
 	}
 	 
